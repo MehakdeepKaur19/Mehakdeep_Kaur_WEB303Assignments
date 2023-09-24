@@ -1,8 +1,7 @@
 // WEB303 Assignment 2
 $(document).ready(function () {
     // Attach click event handlers to the links
-    $('#prospect').click(function () {
-        loadContent('prospect.html');
+    $('#prospect').load('prospect.html');
     });
 
     $('#convert').click(function () {
@@ -32,4 +31,3 @@ $(document).ready(function () {
             }
         });
     }
-    });
