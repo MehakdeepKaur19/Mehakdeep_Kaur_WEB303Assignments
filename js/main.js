@@ -1,7 +1,8 @@
 // WEB303 Assignment 2
 $(document).ready(function () {
     // Attach click event handlers to the links
-    $('#prospect').load('prospect.html');
+    $('#prospect').click(function () {
+        loadContent('prospect.html');
     });
 
     $('#convert').click(function () {
@@ -12,22 +13,24 @@ $(document).ready(function () {
         loadContent('retain.html');
     });
     function loadContent(url) {
-        $.ajax({
-            url: url,
-            method: 'GET',
-            dataType: 'html',
-            success: function (data) {
-                // Hide content with fade-out animation
-                $('#content').fadeOut(400, function () {
-                    // Replace the content of #content with the loaded HTML
-                    $(this).html(data);
-
-                    // Show the content with fade-in animation
-                    $(this).fadeIn(400);
-                });
-            },
-            error: function () {
-                console.log('Error loading content.');
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url , true);
+        xhr.onreadystatechange = function()
+  {
+     if (xhr.readyState == 4 && xhr.status == 200)
+     {
+        var content=$('#content');
+        content.style.opacity = 0;
+        setTimeout(function(){
+            content.innerHTML = xhr.responseText;
+            content.style.opacity = 1;
+        }, 400)
             }
-        });
+        else {
+            console.log('Error loading content.');
+        }
     }
+};
+
+xhr.send();
+})
