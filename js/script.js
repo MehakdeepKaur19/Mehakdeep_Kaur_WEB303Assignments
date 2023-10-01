@@ -28,7 +28,17 @@ function ajax(){
                 $("#team").append("<h2>"+obj.name+"</h2>");
                 $("#team").append("<h5>"+obj.position+"</h5>");
                 $("#team").append("<p>"+obj.bio+"</p>");            });
-        }
+        },
+        setTimeout: (function() {
+            $.each(response.members, function(index, obj) {
+                $("#team").append("<h2>" + obj.name + "</h2>");
+                $("#team").append("<h5>" + obj.position + "</h5>");
+                $("#team").append("<p>" + obj.bio + "</p>");
+            });
+            
+            // Remove the "Loading..." message
+            $("#team").text('');
+        }, 3000)
     });
 }
 
