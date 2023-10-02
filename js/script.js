@@ -37,9 +37,9 @@ function ajax()
         },
         success: function (response) //contains the content that will run if the code is correct
         {
-            $("#team").empty();//to empty out the before text
             setTimeout(function () //sets the time between disappering of the actual data and before data
             {
+                $("#team").empty();//to empty out the before text
                 $.each(response.members, function (index, obj) //response calls the 'members' array
                 { //while obj calls components of each objects in the 'member array'
                     //appending each data to div #team
