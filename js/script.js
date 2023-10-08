@@ -17,7 +17,7 @@ $(function () {
             $("#locationhere").html("<p>Latitude: "+lat+"</p>");
             $("#locationhere").append("<p>Longitude: "+lon+"</p>")
 
-            let storelocation = localStorage.getItem("#locationhere");
+            let storelocation = localStorage.getItem("location");
             if(storelocation){
                 storelocation = JSON.parse(storelocation);
                 let storelat = storelocation.coords.latitude;
