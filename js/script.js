@@ -17,6 +17,14 @@ $(function () {
             $("#locationhere").html("<p>Latitude: "+lat+"</p>");
             $("#locationhere").append("<p>Longitude: "+lon+"</p>")
 
+            let storelocation = localStorage.getItem("#locationhere");
+            if(storelocation){
+                storelocation = JSON.parse(storelocation);
+                let storelat = storelocation.coords.latitude;
+                let storelon = storelocation.coords.longitude;
+                $("#locationhere").html("<p> Presaved Latitude: "+storelat+"</p>");
+            $("#locationhere").append("<p>Presaved Longitude: "+storelon+"</p>")
+            }
         }
         function fail(){
             $("#locationhere").html("<h1>Please allow your geolocation</h1>");
