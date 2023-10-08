@@ -22,8 +22,11 @@ $(function () {
                 storelocation = JSON.parse(storelocation);
                 let storelat = storelocation.coords.latitude;
                 let storelon = storelocation.coords.longitude;
-                $("#locationhere").html("<p> Presaved Latitude: "+storelat+"</p>");
+                $("#locationhere").append("<p> Presaved Latitude: "+storelat+"</p>");
             $("#locationhere").append("<p>Presaved Longitude: "+storelon+"</p>")
+            }
+            else{
+                $("header").text("Welcome to E Corp!");
             }
         }
         function fail(){
