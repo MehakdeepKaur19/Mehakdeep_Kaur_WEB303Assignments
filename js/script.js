@@ -18,6 +18,9 @@ $(function () {
             $("#locationhere").append("<p>Longitude: "+lon+"</p>")
 
         }
+        function fail(){
+            $("#locationhere").html("<h1>Please allow your geolocation</h1>");
+        }
     }
 
 
