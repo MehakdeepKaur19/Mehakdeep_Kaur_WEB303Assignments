@@ -22,8 +22,10 @@ $(function () {
                 storelocation = JSON.parse(storelocation);
                 let storelat = storelocation.coords.latitude;
                 let storelon = storelocation.coords.longitude;
-                $("#locationhere").append("<p> Presaved Latitude: "+storelat+"</p>");
-            $("#locationhere").append("<p>Presaved Longitude: "+storelon+"</p>")
+                
+                let distance = calcDistanceBetweenPoints(lat,lon,storelat,storelon);
+                $("#locationhere").append("<p>Stored loaction: Latitude" +storelat+" Longitude: "+storelon+" Distance traveled: "+distance+"</p>")
+                $("header").append("<h2>Welcome to E Corp! You have traveled"+distance+"<h2>");
             }
             else{
                 $("header").text("Welcome to E Corp!");
