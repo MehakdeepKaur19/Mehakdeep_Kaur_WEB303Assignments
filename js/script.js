@@ -9,7 +9,6 @@ $(function () {
         let lon = position.coords.longitude;
         let accuracy = position.coords.accuracy;
 
-        // Display current location and accuracy
         $("#locationhere").html(
             "<p>Latitude: " + lat + "</p>" +
             "<p>Longitude: " + lon + "</p>" +
@@ -38,6 +37,24 @@ $(function () {
           $("header").append("<h2>Welcome to E Corp! You have traveled " +distance.toFixed(2) +" meters.</h2>");
         } else {
           $("header").html("<h2>Welcome to E Corp!</h2>");
+            $("#locationhere").html("<p>Latitude: "+lat+"</p>");
+            $("#locationhere").append("<p>Longitude: "+lon+"</p>")
+
+            let storelocation = localStorage.getItem('key');
+            if(storelocation){
+                let storelat = storelocation.coords.latitude;
+                let storelon = storelocation.coords.longitude;
+                
+                let distance = calcDistanceBetweenPoints(lat,lon,storelat,storelon);
+                $("#locationhere").append("<p>Stored loaction: Latitude" +storelat+" Longitude: "+storelon+" Distance traveled: "+distance+"</p>")
+                $("header").append("<h2>Welcome to E Corp! You have traveled"+distance+"<h2>");
+            }
+            else{
+                $("header").text("Welcome to E Corp!");
+            }
+        }
+        function fail(){
+            $("#locationhere").html("<h1>Please allow your geolocation</h1>");
         }
       }
   
