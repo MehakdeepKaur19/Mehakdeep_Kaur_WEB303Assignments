@@ -22,7 +22,7 @@ $(function () {
             );
 
             // Set latitude and longitude for New York in localStorage
-            localStorage.setItem("location", JSON.stringify({ latitude: 40.7128, longitude: -74.0060 }));
+           // localStorage.setItem("location", JSON.stringify({ latitude: 40.7128, longitude: -74.0060 }));
 
             let storeLocation = localStorage.getItem("location");
 
@@ -45,8 +45,8 @@ $(function () {
 
                 $("header").append(
                     "<h2>Welcome to E Corp! You have traveled " +
-                    distance.toFixed(2) +
-                    " meters.</h2>"
+                    distance.toFixed(2)/1000+
+                    " killometers.</h2>"
                 );
             } else {
                 $("header").append("<h2>Welcome to E Corp!</h2>");
