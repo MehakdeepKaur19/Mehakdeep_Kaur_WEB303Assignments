@@ -33,8 +33,8 @@ $(function ()
                 let storeLon = storeLocation.longitude;
                 let distance = calcDistanceBetweenPoints(lat, lon, storeLat, storeLon);
   
-                $("#locationhere").append("<p>Stored location: Latitude " +storeLat +" Longitude " +storeLon +
-                    " Distance traveled: " +(distance/1000).toFixed(2) +" killometers</p>");
+                $("#locationhere").append("<p>Stored location: Latitude " +storeLat +"</p>"+"<p> Longitude " +storeLon +"</p>"+
+                    "<p> Distance traveled: " +(distance/1000).toFixed(2) +" killometers</p>");
   
                 $("header").append("<h2>Welcome Back!</h2>");
                 $("header").append("<h2> You have traveled " +(distance / 1000).toFixed(2) +" killometers.</h2>");
