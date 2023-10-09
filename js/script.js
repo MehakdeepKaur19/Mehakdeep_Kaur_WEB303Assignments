@@ -45,7 +45,7 @@ $(function () {
 
                 $("header").append(
                     "<h2>Welcome to E Corp! You have traveled " +
-                    distance.toFixed(2)/1000+
+                    (distance/1000).toFixed(2)+
                     " killometers.</h2>"
                 );
             } else {
