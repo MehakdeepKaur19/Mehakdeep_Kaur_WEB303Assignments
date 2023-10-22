@@ -1,14 +1,18 @@
 /*
-	WEB 303 Assignment 1 - jQuery
-	Mehakdeep Kaur
+    Assignment 05
 */
-$(document).ready(function() {
-	$("input").on("keyup",function(event){
-		let salary = $("#yearly-salary").val();
-		let percent =$("#percent").val();
-		let amount =((salary*percent)/100);
-		amount=amount.toFixed(2);
-		$("#amount").text("$"+amount);
-	})
-})
+
+$(document).ready(function () {
+    class ContentItem{
+        let id, name, des,category;
+        function contructor(id,name,des,category){
+            this.id = id;
+            this.name = name;
+            this.des = des;
+            this.category = category;
+        }
+    }
+
+});
+
 
