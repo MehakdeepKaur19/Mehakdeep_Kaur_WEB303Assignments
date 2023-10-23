@@ -74,7 +74,7 @@ $(document).ready(function()
     );
 
     //Creating the "Update Successfully" button
-    const success='<button>Update Successfully</button>';
+    const success=$('<button>Update Successfully</button>');
     $(success).click(function() 
     {
         //updating first item
@@ -84,12 +84,12 @@ $(document).ready(function()
         $('#content-item-0').html(contentItems[0].toString());
     });
 
-    const fail ='<button>Update Unsuccessfully</button>';
+    const fail =$('<button>Update Unsuccessfully</button>');
     //Creating the "Update Unsuccessfully" button
     $(fail).click(function() 
     {
         //unsuccessfully trying to update first item
-        contentItems[0].updateContentItem(1, 'Updated Title', 'Updated Description', 'Updated Category');
+        contentItems[0].updateContentItem(1,'Snow White','A princess and 7 dwarfs.','Betrayal');
 
         //trying to unsuccessfully updating
         $('#content-item-0').html(contentItems[0].toString());
