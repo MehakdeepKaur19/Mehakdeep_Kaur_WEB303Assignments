@@ -69,32 +69,31 @@ $(document).ready(function()
             'border':'3px solid black',
             'width':'75%',
             'padding':'12px',
-            'margin':'auto auto'
+            'margin':'8px 2px'
         }
     );
-    // Create the "Update Successfully" button
-    const successButton = $('<button>Update Successfully</button>');
-    successButton.click(function() 
-    {
-        // Attempt to update the first item in the array successfully
-        contentItems[0].updateContentItem(0, 'Updated Title', 'Updated Description', 'Updated Category');
 
-        // Update the displayed content
+    //Creating the "Update Successfully" button
+    $('<button>Update Successfully</button>').click(function() 
+    {
+        //updating first item
+        contentItems[0].updateContentItem(0,'Snow White','A princess and 7 dwarfs.','Betrayal');
+
+        //calling toString function for first
         $('#content-item-0').html(contentItems[0].toString());
     });
 
-    // Create the "Update Unsuccessfully" button
-    const failButton = $('<button>Update Unsuccessfully</button>');
-    failButton.click(function() 
+    //Creating the "Update Unsuccessfully" button
+    $('<button>Update Unsuccessfully</button>').click(function() 
     {
-        // Attempt to update the first item in the array unsuccessfully
+        //unsuccessfully trying to update first item
         contentItems[0].updateContentItem(1, 'Updated Title', 'Updated Description', 'Updated Category');
 
-        // Update the displayed content
+        //trying to unsuccessfully updating it
         $('#content-item-0').html(contentItems[0].toString());
     });
 
     // Append the buttons to the page
-    $('body').append(successButton);
-    $('body').append(failButton);
+    $('#content').html('<button>Update Successfully</button>');
+    $('#content').append('<button>Update Unsuccessfully</button>');
 });
