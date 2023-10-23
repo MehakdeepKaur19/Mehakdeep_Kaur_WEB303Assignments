@@ -1,62 +1,100 @@
-$(document).ready(function () {
+/*
+    ASSIGNMENT 5
+*/
+$(document).ready(function()
+{
     // your code here
-    class ContentItem {
-
-        // properties 
-        uniqueIdNumber;
+    class ContentItem 
+    {
+        //initializing content items
+        id;
         name;
-        description;
-        categoryGenre;
+        des;
+        category;
 
-        // constructor
-        constructor(uniqueIdNumber, name, description, categoryGenre) {
-
-            this.uniqueIdNumber = uniqueIdNumber;
+        //constructor
+        constructor(id,name,des,category) 
+        {
+            this.id = id;
             this.name = name;
-            this.description = description;
-            this.categoryGenre = categoryGenre
+            this.des = des;
+            this.category = category;
         }
 
-        //methods
-        updateContentItem(uniqueIdNumber, name, description, categoryGenre) {
-            if ((this.uniqueIdNumber == uniqueIdNumber) && (name != null) && (description != null) && (categoryGenre != null)) {
+        //updating contents
+        updateContentItem(id,name,des,category) 
+        {
+            //checking the conditions
+            if((this.id == id)&&(name != null)&&(des != null)&&(category != null))
+            {
                 this.name = name;
-                this.description = description;
-                this.categoryGenre = categoryGenre;
+                this.des = des;
+                this.category = category;
             }
         }
-        //toSting Method
-        toString() {
-            return `<div id="content-item-${this.uniqueIdNumber}" class="content-item-wrapper">
+
+        //ToString method
+        toString() 
+        {
+            return `<div id="content-item-${this.id}" class="content-item-wrapper">
                         <h2>${this.name}</h2>
-                        <p>${this.description}</p>
-                        <div>${this.categoryGenre}</div>
+                        <p>${this.des}</p>
+                        <div>${this.category}</div>
                     </div>`;
         }
     }
-    //contentitems Array
-
-    let contentItems = [
-        new ContentItem(0, 'The force', 'Comining scientific reserch with real life examples of leaders who have conqured business friction', 'Friction'),
-        new ContentItem(1, 'Becoming', 'In a life filled with meaning and accomplishment,Michelle Obama has emerged as one of the most iconic and compelling women of our era', 'Narrative'),
-        new ContentItem(2, 'Maybe in another life', 'From the acclaimed author of seven husbands of Evelyn Hugo comes a breathtaking novel about a young woman whose fate hinges on the choice she makes after bumping into an old flame', 'Romance'),
-        new ContentItem(3, 'Behind her Eyes', 'a psychological thriller, was written by Sarah Pinborough and published in 2017. The book has sold over 1 million copies worldwide and was adapted for a TV series', 'Thriller'),
-        new ContentItem(4, 'Alice Adventures in Wonderland', ' Alice Adventures in Wonderland, which has delighted adults and children alike since it was published over a century and a half ago and today is recognized as a momentous early foray into the fantasy genre as a whole', 'Fantasy')
-    ];
-    // Loop through contentItems, generate HTML, and append to #content-item-list
-    contentItems.forEach(function (item) {
-        let contentItemHtml = item.toString();
-        $("#content-item-list").append(contentItemHtml);
+    
+    //giving div items in array form
+    let contentItems=
+        [
+            new ContentItem(0,'The Godfather','The Godfather Vito Corleone is the head of the Corleone mafia family in New York. He is at the event of his daughter','Crime'),
+            new ContentItem(1,'Frozen','Frozen is a 2013 American animated musical fantasy film produced by Walt Disney Animation Studios and released by Walt Disney Pictures.','Animation adventure comedy'),
+            new ContentItem(2,'Beauty and the Beast','Beauty and the Beast is a 2017 American musical romantic fantasy film directed by Bill Condon and produced by David Hoberman and Todd Lieberman, from the screenplay by Stephen Chbosky and Evan Spiliotopoulos.','Romance'),
+            new ContentItem(3,'Cinderella','Cinderella (2021), a live-action film musical starring Camila Cabello as Cinderella, Idina Menzel as Cinderella stepmother, Nicholas Galitzine as the Prince, and Billy Porter as the Fairy Godmother.','Fantasy'),
+            new ContentItem(4,'Anaballe', 'Annabelle is a 2014 American supernatural horror film directed by John R. Leonetti, written by Gary Dauberman and produced by Peter Safran and James Wan.','Horror')
+        ];
+    //Looping each content to string menthod
+    contentItems.forEach(function(item) 
+    {
+        let contentItemEach = item.toString();
+        $("#content-item-list").append(contentItemEach);
     });
-    // Update the theme name in the HTML 
-    $('#theme-name').text('Books Theme');
+
+    // Update the theme name in the page
+    $('#theme-name').text('Disney Theme');
 
     // Apply CSS styles to content-item-wrapper using jQuery
-    $('.content-item-wrapper').css({
-        'border': '2px solid black',
-        'width': '80%',
-        'padding': '10px',
-        'margin': '10px auto'
+    $('.content-item-wrapper').css(
+        {
+            'border':'3px solid black',
+            'width':'75%',
+            'padding':'12px',
+            'margin':'auto auto'
+        }
+    );
+    // Create the "Update Successfully" button
+    const successButton = $('<button>Update Successfully</button>');
+    successButton.click(function() 
+    {
+        // Attempt to update the first item in the array successfully
+        contentItems[0].updateContentItem(0, 'Updated Title', 'Updated Description', 'Updated Category');
+
+        // Update the displayed content
+        $('#content-item-0').html(contentItems[0].toString());
     });
-    
+
+    // Create the "Update Unsuccessfully" button
+    const failButton = $('<button>Update Unsuccessfully</button>');
+    failButton.click(function() 
+    {
+        // Attempt to update the first item in the array unsuccessfully
+        contentItems[0].updateContentItem(1, 'Updated Title', 'Updated Description', 'Updated Category');
+
+        // Update the displayed content
+        $('#content-item-0').html(contentItems[0].toString());
+    });
+
+    // Append the buttons to the page
+    $('body').append(successButton);
+    $('body').append(failButton);
 });
