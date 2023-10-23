@@ -94,6 +94,6 @@ $(document).ready(function()
     });
 
     // Append the buttons to the page
-    $('#content').html('<button id="success">Update Successfully</button>');
-    $('#content').append('<button id="fail">Update Unsuccessfully</button>');
+    $('body').html('<button id="success">Update Successfully</button>');
+    $('body').append('<button id="fail">Update Unsuccessfully</button>');
 });
