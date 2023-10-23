@@ -89,7 +89,7 @@ $(document).ready(function()
     $(fail).click(function() 
     {
         //unsuccessfully trying to update first item
-        contentItems[0].updateContentItem(1,'Snow White','A princess and 7 dwarfs.','Betrayal');
+        contentItems[0].updateContentItem(1,'Taunted','Other name for Rapunzel','Love');
 
         //trying to unsuccessfully updating
         $('#content-item-0').html(contentItems[0].toString());
