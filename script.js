@@ -89,7 +89,7 @@ $(document).ready(function()
         //unsuccessfully trying to update first item
         contentItems[0].updateContentItem(1, 'Updated Title', 'Updated Description', 'Updated Category');
 
-        //trying to unsuccessfully updating it
+        //trying to unsuccessfully updating
         $('#content-item-0').html(contentItems[0].toString());
     });
 
