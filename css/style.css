@@ -1,4 +1,56 @@
-html, body{
+
+html {
+    margin: 0%;
+    background-color: rgb(183, 168, 103);
+}
+
+h1, h2 {
+    text-align: center;
+    color: rgb(2, 1, 1);
+}
+
+button {
+    width: 100%;
+    background-color: rgb(103, 125, 157);
+    font-size: large;
+}
+
+.accord-panel {
+    display: none;
+}
+
+
+.accord{
+    list-style-type: none; /*remove bullet points*/
+}
+
+/* Tab Panel Styles */
+
+.tab-list {
     margin: 0;
     padding: 0;
+}
+
+.tab-list li {
+    display: inline-block;
+    background-color: rgb(193, 233, 156);
+}
+
+.tab-list li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(2, 1, 1);
+}
+
+.tab-list li.active {
+    background-color: rgb(103, 125, 157);
+}
+
+.tab-panel {
+    display: none;
+    background-color: rgb(103, 125, 157);
+    padding: 10px;
+    min-height: 75px;
+    overflow: auto;
 }
