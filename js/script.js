@@ -1,37 +1,47 @@
-$(document).ready(function() {
-    // Accordion functionality
-    $('.accord-label').on('click', function(e) {
-        e.preventDefault();
-        var $this = $(this);
-        var $accordion = $this.next('.accord-panel');
 
-        // Toggle the showing class and slide the panel
-        $this.toggleClass('showing');
-        $accordion.slideToggle();
+/*Event handler*/
+$('.accord-label').on('click', function(e){
 
-        // Hide other panels
-        $('.accord-panel').not($accordion).slideUp();
-        $('.accord-label').not($this).removeClass('showing');
-    });
+    // Prevent the button from the default action "submit"
+    e.preventDefault();
 
-    // Tabbed Section functionality
+    // get the button that were clicking
+    let $this = $(this);
+
+    // loop for every panel
+    $('.accord-panel').each(function(){
+        //make sure that showing class is removed - no panel is removed
+        $this.removeClass('showing');
+    })
+
+    // show the panel that is for the button we clicked
+    $this.toggleClass('showing');
+    $this.next().slideToggle();
+
+    // hide other panels
+    $('.accord-panel').not($this.next()).slideUp();
+});
+
+
+// TAB PANELS
+//hidden all panels
+$('.tab-panel').hide();
+$('#tab1').show();
+
+$('.tab-list li').on('click', function(e){
+    e.preventDefault();
+
+     // remove current active class
+    $('.tab-list li').removeClass('active'); 
+
+    // hide current tab panel
     $('.tab-panel').hide();
-    $('#tab1').show();
+  
+    // add active class to new tab
+    $(this).addClass('active');
 
-    $('.tab-label').on('click', function(e) {
-        e.preventDefault();
-
-        // Remove current active class
-        $('.tab-label').removeClass('active');
-
-        // Hide current tab panel
-        $('.tab-panel').hide();
-
-        // Add active class to new tab
-        $(this).addClass('active');
-
-        // Show new tab panel
-        var panel = $(this).attr('href');
-        $(panel).show();
-    });
+     // show new tab panel
+     let panel = $(this).find('a').attr('href');
+     $(panel).show();
+     return false;
 });
