@@ -18,11 +18,11 @@ $(document).ready(function() {
     $('.tab-panel').hide();
     $('#tab1').show();
 
-    $('.tab-list li').on('click', function(e) {
+    $('.tab-label').on('click', function(e) {
         e.preventDefault();
 
         // Remove current active class
-        $('.tab-list li').removeClass('active');
+        $('.tab-label').removeClass('active');
 
         // Hide current tab panel
         $('.tab-panel').hide();
@@ -31,7 +31,7 @@ $(document).ready(function() {
         $(this).addClass('active');
 
         // Show new tab panel
-        var panel = $(this).find('a').attr('href');
+        var panel = $(this).attr('href');
         $(panel).show();
     });
 });
