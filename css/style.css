@@ -31,6 +31,12 @@ button {
     list-style-type: none; /*remove bullet points*/
 }
 
+#one{
+    position: relative;
+    position: right;
+    padding: 5%;
+    size: 60%;
+}
 /* Tab Panel Styles */
 
 .tab-list {
