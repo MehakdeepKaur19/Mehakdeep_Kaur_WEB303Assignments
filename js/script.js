@@ -3,8 +3,17 @@ $('.accord-label1').on('click', function(e){
     e.preventDefault();
 
     let $this = $(this);
+    $('.accord-panel').each(function(){
+        //make sure that showing class is removed - no panel is removed
+        $this.removeClass('showing');
+    })
+
+    // show the panel that is for the button we clicked
     $this.toggleClass('showing');
     $this.next().slideToggle();
+
+    // hide other panels
+    $('.accord-panel').not($this.next()).slideUp();
 });
 $('.accord-label2').on('click', function(e){
     e.preventDefault();
