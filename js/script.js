@@ -1,25 +1,4 @@
-/*Event handler*/
-$('.accord-label1').on('click', function(e){
 
-    // Prevent the button from the default action "submit"
-    e.preventDefault();
-
-    // get the button that were clicking
-    let $this = $(this);
-
-    // loop for every panel
-    $('.accord-panel1').each(function(){
-        //make sure that showing class is removed - no panel is removed
-        $this.removeClass('showing');
-    })
-
-    // show the panel that is for the button we clicked
-    $this.toggleClass('showing');
-    $this.next().slideToggle();
-
-    // hide other panels
-    $('.accord-panel1').not($this.next()).slideUp();
-});
 /*Event handler*/
 $('.accord-label').on('click', function(e){
 
@@ -33,7 +12,7 @@ $('.accord-label').on('click', function(e){
     $('.accord-panel').each(function(){
         //make sure that showing class is removed - no panel is removed
         $this.removeClass('showing');
-    })
+    });
 
     // show the panel that is for the button we clicked
     $this.toggleClass('showing');
