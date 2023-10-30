@@ -1,18 +1,25 @@
 
 html {
     margin: 0%;
-    background-color: rgb(183, 168, 103);
+    background-color:black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-h1, h2 {
+h1{
     text-align: center;
-    color: rgb(2, 1, 1);
+    color: gainsboro ;
+    font-size: large;
+}
+h2{
+    text-align: center;
+    color: gainsboro;
+    font-size: medium;
 }
 
 button {
     width: 100%;
-    background-color: rgb(103, 125, 157);
-    font-size: large;
+    background-color: plum;
+    font-size: medium;
 }
 
 .accord-panel {
