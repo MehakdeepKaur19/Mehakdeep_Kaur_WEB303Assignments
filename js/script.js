@@ -1,4 +1,5 @@
 //Event Handler
+$(document).ready(function(){
 $('.accord-label1').on('click', function(e){
     e.preventDefault();
 
@@ -47,4 +48,5 @@ $('.tab-list li').on('click', function(e){
     let panel = $(this).find('a').attr('href');
     $(panel).show();
     return false;
+});
 });
