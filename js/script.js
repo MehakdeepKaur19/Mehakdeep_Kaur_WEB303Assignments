@@ -1,47 +1,29 @@
-
-/*Event handler*/
+//Event Handler
 $('.accord-label').on('click', function(e){
-
-    // Prevent the button from the default action "submit"
     e.preventDefault();
-
-    // get the button that were clicking
     let $this = $(this);
-
-    // loop for every panel
-    $('.accord-panel').each(function(){
-        //make sure that showing class is removed - no panel is removed
+    $('.accord-panel').each(function()
+    {
         $this.removeClass('showing');
     });
 
-    // show the panel that is for the button we clicked
     $this.toggleClass('showing');
     $this.next().slideToggle();
-
-    // hide other panels
     $('.accord-panel').not($this.next()).slideUp();
 });
 
-
-// TAB PANELS
-//hidden all panels
+//Tabbed Panels
 $('.tab-panel').hide();
 $('#tab1').show();
 
-$('.tab-list li').on('click', function(e){
+$('.tab-list li').on('click', function(e)
+{
     e.preventDefault();
-
-     // remove current active class
-    $('.tab-list li').removeClass('active'); 
-
-    // hide current tab panel
+    $('.tab-list li').removeClass('active');
     $('.tab-panel').hide();
-  
-    // add active class to new tab
     $(this).addClass('active');
-
-     // show new tab panel
-     let panel = $(this).find('a').attr('href');
-     $(panel).show();
-     return false;
+    
+    let panel = $(this).find('a').attr('href');
+    $(panel).show();
+    return false;
 });
