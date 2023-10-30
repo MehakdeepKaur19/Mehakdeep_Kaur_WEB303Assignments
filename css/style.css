@@ -31,7 +31,7 @@ button {
     list-style-type: none; /*remove bullet points*/
 }
 
-#one{
+.one{
     position: relative;
     position: right;
     padding: 5%;
