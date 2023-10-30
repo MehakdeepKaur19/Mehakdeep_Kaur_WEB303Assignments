@@ -1,69 +1,67 @@
-
 html {
     margin: 0%;
-    background-color:black;
+    background-color: black;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-h1{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  h1 {
     text-align: center;
-    color: gainsboro ;
+    color: gainsboro;
     font-size: large;
-}
-h2{
+  }
+  h2 {
     text-align: center;
     color: gainsboro;
     font-size: medium;
-}
-
-button {
+  }
+  
+  button {
     width: 100%;
     background-color: plum;
     font-size: medium;
-}
-
-.accord-panel {
+  }
+  
+  .accord-panel {
     display: none;
-}
-
-
-.accord{
+  }
+  
+  .accord {
     list-style-type: none; /*remove bullet points*/
-}
-
-.one{
-    position: relative;
-    position: right;
-    padding: 5%;
-    size: 60%;
-}
-/* Tab Panel Styles */
-
-.tab-list {
+  }
+  
+  .one {
+    padding-left: 30%;
+    float: center;
+    width: 60%;
+  }
+  /* Tab Panel Styles */
+  
+  .tab-list {
     margin: 0;
     padding: 0;
-}
-
-.tab-list li {
+  }
+  
+  .tab-list li {
     display: inline-block;
-    background-color: rgb(193, 233, 156);
-}
-
-.tab-list li a {
+    background-color: pink;
+  }
+  
+  .tab-list li a {
     display: block;
     padding: 10px 20px;
     text-decoration: none;
     color: rgb(2, 1, 1);
-}
-
-.tab-list li.active {
-    background-color: rgb(103, 125, 157);
-}
-
-.tab-panel {
+  }
+  
+  .tab-list li.active {
+    background-color: plum;
+  }
+  
+  .tab-panel {
     display: none;
-    background-color: rgb(103, 125, 157);
+    background-color: palevioletred;
     padding: 10px;
     min-height: 75px;
     overflow: auto;
-}
+  }
+  
