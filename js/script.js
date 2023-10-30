@@ -3,7 +3,7 @@ $('.accord-label1').on('click', function(e){
     e.preventDefault();
 
     let $this = $(this);
-    $('.accord-panel').each(function(){
+    $('.accord-panel1').each(function(){
         //make sure that showing class is removed - no panel is removed
         $this.removeClass('showing');
     })
@@ -13,13 +13,13 @@ $('.accord-label1').on('click', function(e){
     $this.next().slideToggle();
 
     // hide other panels
-    $('.accord-panel').not($this.next()).slideUp();
+    $('.accord-panel1').not($this.next()).slideUp();
 });
 $('.accord-label2').on('click', function(e){
     e.preventDefault();
 
     let $this = $(this);
-    $('.accord-panel').each(function(){
+    $('.accord-panel2').each(function(){
         //make sure that showing class is removed - no panel is removed
         $this.removeClass('showing');
     })
@@ -29,7 +29,7 @@ $('.accord-label2').on('click', function(e){
     $this.next().slideToggle();
 
     // hide other panels
-    $('.accord-panel').not($this.next()).slideUp();
+    $('.accord-panel2').not($this.next()).slideUp();
 });
 
 //Tabbed Panels

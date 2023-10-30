@@ -21,10 +21,12 @@ html {
     font-size: medium;
   }
   
-  .accord-panel{
+  .accord-panel1{
     display: none;
   }
-  
+  .accord-panel2{
+    display: none;
+  }
   
   
   .accord {
