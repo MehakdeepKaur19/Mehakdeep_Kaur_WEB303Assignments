@@ -21,9 +21,13 @@ html {
     font-size: medium;
   }
   
-  .accord-panel {
+  .accord-panel1{
     display: none;
   }
+  .accord-panel2{
+    display: none;
+  }
+  
   
   .accord {
     list-style-type: none; /*remove bullet points*/

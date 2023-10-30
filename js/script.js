@@ -1,5 +1,12 @@
 //Event Handler
-$('.accord-label').on('click', function(e){
+$('.accord-label1').on('click', function(e){
+    e.preventDefault();
+
+    let $this = $(this);
+    $this.toggleClass('showing');
+    $this.next().slideToggle();
+});
+$('.accord-label2').on('click', function(e){
     e.preventDefault();
 
     let $this = $(this);
