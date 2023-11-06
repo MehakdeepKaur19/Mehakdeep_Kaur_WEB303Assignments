@@ -29,7 +29,7 @@
         }
 
         // Bind a click event to the close button for closing the modal
-        $('#close').on('click', function () {
+        $('#close-images').on('click', function () {
             closeModal();
         });
 
