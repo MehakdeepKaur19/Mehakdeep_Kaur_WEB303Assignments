@@ -22,9 +22,8 @@ $(function () {
 
 
         // When the user clicks on <span> (x), close the modal
-        $('#close').on('click', function (e) {
-            e.preventDefault();
-            $('#photo-viewer').hide();
+        $('#close').on('click', function () {
+            $('#box-container').hide();
         });
 
     });
