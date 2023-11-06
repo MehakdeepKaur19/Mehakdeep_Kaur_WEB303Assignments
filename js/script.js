@@ -21,7 +21,7 @@ $(function () {
         })
 
         $('#close').on('click', function () {
-            $('.thumbnail-anchor active').hide();
+            $(modal).hide();
         });
 
     });
