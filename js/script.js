@@ -1,34 +1,34 @@
 $(function () {
-    // Initialize the photo viewer
-    $('#photo-viewer').photoViewer();
+    $('#photo-viewer').show().on('click', '.photo-box', function x(e) {
+        var $content = $(this).clone().find('img').css({
+            marginLeft: 0,
+            marginTop: 0,
+            width: '100%',
+            height: 'auto'
+        });
+        // Get the modal
+        var modal = $("#myModal");
 
-    $('#photo-viewer').on('click', '.photo-box', function (e) {
-        e.preventDefault();
-        openModal();
+
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var modalImg = $("#img");
+        $('.photo-box').on('click', function (e) {
+            $(modal).show()
+            $(modalImg).attr('src', $('.active').children('.myImg').map(function () {
+                return $(this).attr('src')
+            }).get());
+        })
+
+        // Get the <span> element that closes the modal
+        var span = $(".close");
+
+        // When the user clicks on <span> (x), close the modal
+        span.on('click', function (e) {
+            e.preventDefault();
+            $(modal).hide();
+        });
+
     });
-
-    function openModal() {
-        var $modal = $('<div id="modal" class="modal"></div>');
-        var $modalContent = $('<div class="modal-content"></div>');
-        var $clonedImage = $('#photo-viewer .photo-box').clone();
-        var $closeButton = $('<span class="modal-close close-button">Close</span>');
-
-        $modalContent.append($clonedImage);
-        $modalContent.append($closeButton);
-        $modal.append($modalContent);
-
-        // Add a heading with your gallery name
-        var $heading = $('<div class="modal-header">' + $('h1').text() + '</div>');
-        $modalContent.prepend($heading);
-
-        $modal.appendTo('body');
-    }
-
-    $(document).on('click', '.modal-close', function() {
-        closeModal();
-    });
-
-    function closeModal() {
-        $('#modal').remove();
-    }
 });
+
