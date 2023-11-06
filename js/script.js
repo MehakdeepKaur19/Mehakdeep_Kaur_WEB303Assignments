@@ -20,10 +20,8 @@ $(function () {
             }).get());
         })
 
-
-        // When the user clicks on <span> (x), close the modal
         $('#close').on('click', function () {
-            $('#box-container').hide();
+            $('.thumbnail-anchor active').hide();
         });
 
     });
