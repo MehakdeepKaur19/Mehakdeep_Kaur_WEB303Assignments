@@ -19,7 +19,7 @@ $(function () {
             }).get());
         });
 
-        $('#close').on('click', function () {
+        $('#modal-close').on('click', function () {
             // Close the modal when the close button is clicked
             prompt("Hello");
         });
