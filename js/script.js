@@ -21,7 +21,7 @@ $(function () {
 
         $('#close').on('click', function () {
             // Close the modal when the close button is clicked
-            $(modal).hide();
+            prompt("Hello");
         });
     });
 });
