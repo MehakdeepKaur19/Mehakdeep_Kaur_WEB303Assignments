@@ -20,13 +20,11 @@ $(function () {
             }).get());
         })
 
-        // Get the <span> element that closes the modal
-        var span = $("#modal-close");
 
         // When the user clicks on <span> (x), close the modal
-        span.on('click', function (e) {
+        $('#close').on('click', function (e) {
             e.preventDefault();
-            $(modal).hide();
+            $('#photo-viewer').hide();
         });
 
     });
