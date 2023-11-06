@@ -7,8 +7,14 @@ $(function () {
             height: 'auto'
         });
         //modal code goes here
-        $(".modal-close").on("click",function(){
-            $('#modal').hide();
+        $('.photo-box').on('click', function (e) {
+            e.preventDefault(); // Prevent the default link behavior
+            openModal();
         });
+        function closeModal() {
+            $('#modal').hide();
+        }
+        $('.modal-close').on('click', closeModal);
+
     });
 });

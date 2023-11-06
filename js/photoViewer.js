@@ -1,31 +1,20 @@
 (function($) {
     // Define the jQuery plugin function
     $.fn.photoViewer = function() {
-      // Default settings for the photo viewer
-      var settings = {
-        borderStyle: '2px solid red', // Default border style
-        modalWidth: 800,             // Default modal width
-        modalHeight: 450,            // Default modal height
-      };
-  
-      // Extend the default settings with user-defined options
-      settings = $.extend(settings, arguments[0] || {});
-  
-      // Apply the plugin to each matched element
       this.each(function() {
-        var $photoViewer = $(this);
-        var $mainImage = $photoViewer.find('.');
-        var $thumbnails = $photoViewer.find('.thumbnail-anchor');
+        let $photoViewer = $(this);
+        let $mainImage = $photoViewer.find('.');
+        let $thumbnails = $photoViewer.find('.thumbnail-anchor');
   
         // Add a border to the main image
-        $mainImage.css('border', settings.borderStyle);
+        $mainImage.css('border' , '2px solid red');
   
         // Add border to active thumbnail
-        $thumbnails.filter('.active').css('border', settings.borderStyle);
+        $thumbnails.filter('.active').css('border' , '2px solid blue');
   
         // Handle click on a thumbnail
         $thumbnails.click(function() {
-          var imgURL = $(this).attr('href');
+          let imgURL = $(this).attr('href');
           $mainImage.fadeOut(100, function() {
             $mainImage.attr('src', imgURL);
           }).fadeIn(100);
