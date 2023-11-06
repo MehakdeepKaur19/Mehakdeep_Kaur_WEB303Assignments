@@ -21,7 +21,7 @@ $(function () {
         })
 
         // Get the <span> element that closes the modal
-        var span = $(".close");
+        var span = $("#modal-close");
 
         // When the user clicks on <span> (x), close the modal
         span.on('click', function (e) {
