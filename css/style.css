@@ -1,8 +1,10 @@
+/* Hide London and Windsor wrappers (adjust these selectors as needed) */
 #london-wrapper,
 #windsor-wrapper {
   display: none;
   height: 500px;
 }
+
 /* Your custom styles for the borders, layout, etc. */
 /* Style your photo gallery and thumbnails */
 .photo-gallery {
@@ -12,7 +14,7 @@
 
 .photo-thumbnail {
   margin: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; /* Border for thumbnails */
   cursor: pointer;
 }
 
@@ -33,7 +35,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay background */
   z-index: 1;
 }
 
@@ -41,7 +43,7 @@
   position: absolute;
   top: 20px;
   right: 30px;
-  font-size: 30px;
+  font-size: 30px; /* Close button styles */
   cursor: pointer;
 }
 
@@ -53,8 +55,8 @@
 #modal-image {
   display: block;
   margin: 0 auto;
-  max-width: 800px;
-  max-height: 450px;
+  max-width: 800px; /* Set maximum width for the modal image */
+  max-height: 450px; /* Set maximum height for the modal image */
 }
 
 /* Add more custom styles as needed */
