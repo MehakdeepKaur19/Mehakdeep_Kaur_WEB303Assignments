@@ -6,24 +6,22 @@ $(function () {
             width: '100%',
             height: 'auto'
         });
+
         // Get the modal
         var modal = $("#myModal");
-
-
 
         // Get the image and insert it inside the modal - use its "alt" text as a caption
         var modalImg = $("#img");
         $('.photo-box').on('click', function (e) {
-            $(modal).show()
+            $(modal).show();
             $(modalImg).attr('src', $('.active').children('.myImg').map(function () {
-                return $(this).attr('src')
+                return $(this).attr('src');
             }).get());
-        })
-
-        $('#close').on('click', function () {
-            $(modal).hide();
         });
 
+        $('#close').on('click', function () {
+            // Close the modal when the close button is clicked
+            $(modal).hide();
+        });
     });
 });
-
