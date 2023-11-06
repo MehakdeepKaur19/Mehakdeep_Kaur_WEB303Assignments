@@ -1,35 +1,60 @@
-#london-wrapper, #windsor-wrapper{
-    display: none;
-    height: 500px;
+#london-wrapper,
+#windsor-wrapper {
+  display: none;
+  height: 500px;
 }
 /* Your custom styles for the borders, layout, etc. */
-#photo-box {
-    border: 2px solid #007acc;
+/* Style your photo gallery and thumbnails */
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.photo-box.active {
-    border: 2px solid #ff0000;
+.photo-thumbnail {
+  margin: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
 
-#box-container {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    max-width: 800px;
-    max-height: 450px;
-    padding: 20px;
-    border: 2px solid #007acc;
-    z-index: 999;
-    text-align: center;
+.thumbnail-link {
+  display: block;
 }
 
-#close {
-    cursor: pointer;
-    font-size: 18px;
-    position: absolute;
-    top: 10px;
-    right: 20px;
+.thumbnail-link img {
+  max-width: 100%;
+  height: auto;
 }
+
+/* Style the modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-heading {
+  text-align: center;
+  color: white;
+}
+
+#modal-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  max-height: 450px;
+}
+
+/* Add more custom styles as needed */

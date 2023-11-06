@@ -1,14 +1,15 @@
-$(function () {
-    $('#photo-viewer').customPhotoViewer().show().on('click', '.photo-box', function (e) {
-        var $content = $(this).clone().find('img').css({
-            marginLeft: 0,
-            marginTop: 0,
-            width: '100%',
-            height: 'auto'
-        });
-        //modal code goes here
-        $('#close-images').on('click',function(){
-            $('#box-container').hide();
-        });
+$(document).ready(function () {
+    // Open modal when a thumbnail is clicked
+    $(".thumbnail-link").click(function (e) {
+      e.preventDefault();
+      var imgSrc = $(this).attr("href");
+      $("#modal-image").attr("src", imgSrc);
+      $(".modal").show();
     });
-});
+  
+    // Close modal when the close button is clicked
+    $("#close-modal").click(function () {
+      $(".modal").hide();
+    });
+  });
+  
