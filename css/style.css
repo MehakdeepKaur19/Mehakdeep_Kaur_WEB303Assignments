@@ -1,27 +1,36 @@
-body{
-    background-color: lavenderblush;
-}
-h1{
+body {
+    background-color: black;
+    color: white;
+  }
+  h1 {
     text-align: center;
-}
-table{
+    font-style: italic;
+  }
+  table {
     margin: 20px auto;
-    border: 2px solid burlywood;
-}
-input{
+    border: 2px solid whitesmoke;
+  }
+  input {
     margin-left: 18px;
-    border: 2px solid black;
+    border: 2px solid goldenrod;
     width: 20%;
     padding: 5px;
-}
-td{
+  }
+  td {
     width: 5%;
     font-size: 20px;
-}
-thead td{
+  }
+  thead td {
     font-weight: bold;
-}
-.highlighted {
-    background-color: darkgreen;
+  }
+  .highlighted {
+    background-color: lightcoral;
     color: white;
-}
+  }
+  table {
+    background-color: palevioletred;
+  }
+  button {
+    background-color: pink;
+  }
+  
