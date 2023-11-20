@@ -1,36 +1,47 @@
 body {
-    background-color: black;
-    color: white;
-  }
-  h1 {
-    text-align: center;
-    font-style: italic;
-  }
-  table {
-    margin: 20px auto;
-    border: 2px solid whitesmoke;
-  }
-  input {
-    margin-left: 18px;
-    border: 2px solid goldenrod;
-    width: 20%;
-    padding: 5px;
-  }
-  td {
-    width: 5%;
-    font-size: 20px;
-  }
-  thead td {
-    font-weight: bold;
-  }
-  .highlighted {
-    background-color: lightcoral;
-    color: white;
-  }
-  table {
-    background-color: palevioletred;
-  }
-  button {
-    background-color: pink;
-  }
-  
+  background-color: palevioletred;
+  color: aliceblue;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  margin-left: 10px;
+  border: 2px solid plum;
+  width: 20%;
+  padding: 5px;
+
+}
+
+table {
+  margin: 20px auto;
+  border: 10px solid white;
+}
+
+td {
+  width: 10%;
+  font-size: 20px;
+}
+
+thead th a{
+  font-weight: bold;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+table, tr,th,td {
+  border: 1px solid white;
+  padding: 2%;
+  border-collapse: collapse;
+}
+a.ascending::after{
+  content: "\25B2";
+}
+a.descending::after{
+  content: "\25BC";
+}
+a.no-sort::after{
+  content: "";
+}

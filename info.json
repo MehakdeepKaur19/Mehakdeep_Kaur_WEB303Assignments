@@ -1,51 +1,58 @@
 [
     {
-        "name":"Daniel Radcliffe",
-        "character":"Harry Potter",
-        "age":"34",
-        "gender":"Male",
-        "hometown":"London,England"
+        "name": "Daniel Radcliffe",
+        "character": "Harry Potter",
+        "age": "34",
+        "gender": "Male",
+        "hometown": "London, England",
+        "dob": "1989-07-23"
     },
     {
         "name": "Emma Watson",
-        "character": "Hermione Granger", 
-        "age": "32", 
-        "gender": "Female", 
-        "hometown": "Paris, France"
+        "character": "Hermione Granger",
+        "age": "32",
+        "gender": "Female",
+        "hometown": "Paris, France",
+        "dob": "1990-04-15"
     },
     {
-        "name": "Rupert Grint", 
-        "character": "Ron Weasley", 
-        "age": "33", 
-        "gender": "Male", 
-        "hometown": "Ottery St Catchpole, England"
+        "name": "Rupert Grint",
+        "character": "Ron Weasley",
+        "age": "33",
+        "gender": "Male",
+        "hometown": "Ottery St Catchpole, England",
+        "dob": "1988-08-24"
     },
     {
-        "name": "Tom Felton", 
-        "character": "Draco Malfoy", 
-        "age": "34", 
-        "gender": "Male", 
-        "hometown": "Wiltshire, England"
+        "name": "Tom Felton",
+        "character": "Draco Malfoy",
+        "age": "34",
+        "gender": "Male",
+        "hometown": "Wiltshire, England",
+        "dob": "1987-09-22"
     },
     {
-        "name": "Bonnie Wright", 
-        "character": "Ginny Weasley", 
-        "age": "31", 
-        "gender": "Female", 
-        "hometown": "Ottery St Catchpole, England"
+        "name": "Bonnie Wright",
+        "character": "Ginny Weasley",
+        "age": "31",
+        "gender": "Female",
+        "hometown": "Ottery St Catchpole, England",
+        "dob": "1991-02-17"
     },
     {
-        "name": "Alan Rickman", 
-        "character": "Severus Snape", 
-        "age": "†69", 
-        "gender": "Male", 
-        "hometown": "Unknown"
+        "name": "Alan Rickman",
+        "character": "Severus Snape",
+        "age": "†69",
+        "gender": "Male",
+        "hometown": "Unknown",
+        "dob": "1946-02-21"
     },
     {
-        "name": "Helena Bonham Carter", 
-        "character": "Bellatrix Lestrange", 
-        "age": "55", 
-        "gender": "Female", 
-        "hometown": "London, England"
+        "name": "Helena Bonham Carter",
+        "character": "Bellatrix Lestrange",
+        "age": "55",
+        "gender": "Female",
+        "hometown": "London, England",
+        "dob": "1966-05-26"
     }
 ]
