@@ -19,7 +19,7 @@ let $headingRow = $('<tr/>');
 $('thead').append($headingRow);
 $headingRow.append($('<th/>').html('<a data-sort="name">Name</a>'));
 $headingRow.append($('<th/>').html('<a data-sort="name">Character</a>'));
-$headingRow.append($('<th/>').html('<a data-sort="age">Age</a>'));
+$headingRow.append($('<th/>').html('<a data-sort="name">Age</a>'));
 $headingRow.append($('<th/>').html('<a data-sort="name">Gender</a>'));
 $headingRow.append($('<th/>').html('<a data-sort="name">Hometown</a>'));
 $headingRow.append($('<th/>').html('<a data-sort="date">Date Of Birth</a>'));
