@@ -2,10 +2,10 @@ $(document).ready(function () {
     const countryDropdown = $('#country');
 
     // Populate the country dropdown dynamically from countries.js
-    countries.forEach(function (countryName) {
+    countries.forEach(function (country) {
         const option = $('<option></option>');
-        option.val(countryName);  // You can use country code as the value if needed
-        option.text(countryName);
+        option.val(country.code);  // You can use country code as the value if needed
+        option.text(country.name);
         countryDropdown.append(option);
     });
 
