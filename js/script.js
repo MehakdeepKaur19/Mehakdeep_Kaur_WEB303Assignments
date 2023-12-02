@@ -5,7 +5,15 @@ $(document).ready(function () {
         const password = $('#password').val();
         const confirmPassword = $('#checkpsd').val();
         const termsCheckbox = $('#terms').prop('checked');
-        const country = $('#country').val();
+		const countryDropdown = $('#country');
+
+		// Populate the country dropdown dynamically from countries.js
+		countries.forEach(function (countryName) {
+			const option = $('<option></option>');
+			option.val(countryName);  // You can use country code as the value if needed
+			option.text(countryName);
+			countryDropdown.append(option);
+		});
 
         const submitButton = $('#submitButton');
 
