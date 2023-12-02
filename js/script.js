@@ -1,10 +1,11 @@
 $(document).ready(function () {
     const countryDropdown = $('#country');
+    const submitButton = $('#submitButton');
 
     // Populate the country dropdown dynamically from countries.js
     countries.forEach(function (country) {
         const option = $('<option></option>');
-        option.val(country.code);  // You can use country code as the value if needed
+        option.val(country.code);
         option.text(country.name);
         countryDropdown.append(option);
     });
@@ -17,9 +18,7 @@ $(document).ready(function () {
         const termsCheckbox = $('#terms').prop('checked');
         const selectedCountry = $('#country').val();
 
-        const submitButton = $('#submitButton');
-
-        // Enable the submit button if all requirements are met
+        // Enable the submit button if all fields are filled
         submitButton.prop('disabled', !(username && password.length >= 12 && confirmPassword === password && termsCheckbox && selectedCountry));
     }
 
@@ -31,13 +30,16 @@ $(document).ready(function () {
     $('#country').on('change', checkFormRequirements);
 
     // Event listener for form submission
-    $('#registration').on('submit', function (event) {
-        event.preventDefault(); // Prevent form from submitting for demo purposes
-
+    $('#registration').on('submitButton', function (event) {
         const username = $('#username').val();
-        const selectedCountry = $('#country :selected').text(); // Get the selected country text
+        const selectedCountry = $('#country :selected').text();
 
-        // Redirect to registration.html with parameters
-        window.location.href = `registration.html?username=${encodeURIComponent(username)}&country=${encodeURIComponent(selectedCountry)}`;
+        // Check if all fields are filled before redirecting
+        if (username && selectedCountry) {
+            // Redirect to registration.html with parameters
+            window.location.href = `register.html?username=${encodeURIComponent(username)}&country=${encodeURIComponent(selectedCountry)}`;
+        }
+
+        event.preventDefault(); // Prevent form from submitting for demo purposes
     });
 });
