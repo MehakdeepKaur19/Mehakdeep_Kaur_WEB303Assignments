@@ -19,7 +19,7 @@ $(document).ready(function () {
         const selectedCountry = $('#country').val();
 
         // Enable the submit button if all fields are filled
-        submitButton.prop('disabled', !(username && password.length >= 12 && confirmPassword === password && termsCheckbox && selectedCountry));
+        submitButton.prop('enabled', !(username && password.length >= 12 && confirmPassword === password && termsCheckbox && selectedCountry));
     }
 
     // Event listeners to check form requirements on input/change
@@ -30,7 +30,7 @@ $(document).ready(function () {
     $('#country').on('change', checkFormRequirements);
 
     // Event listener for form submission
-    $('#registration').on('submitButton', function (event) {
+    $('#registration').on('submit', function (event) {
         const username = $('#username').val();
         const selectedCountry = $('#country :selected').text();
 
