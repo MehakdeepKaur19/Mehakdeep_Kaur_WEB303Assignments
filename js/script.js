@@ -19,7 +19,7 @@ $(document).ready(function () {
         const selectedCountry = $('#country').val();
 
         // Enable the submit button if all fields are filled
-        submitButton.prop('enabled', !(username && password.length >= 12 && confirmPassword === password && termsCheckbox && selectedCountry));
+        submitButton.prop('disabled', !(username && password.length >= 12 && confirmPassword === password && termsCheckbox && selectedCountry));
     }
 
     // Event listeners to check form requirements on input/change
