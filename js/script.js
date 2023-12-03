@@ -1,19 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let h2 = document.querySelector('h2');
-
+    // Populate the country dropdown dynamically from countries.js
     for (let i = 0; i < countries.length; i++) {
-        let radio = document.createElement('input');
-        radio.type = 'radio';
-        radio.name = 'country';
-        radio.id = countries[i].code; // Assuming countries have a 'code' property
-        radio.value = countries[i].code; // Assuming countries have a 'code' property
-
-        let label = document.createElement('label');
-        label.for = countries[i].code; // Assuming countries have a 'code' property
-        label.innerHTML = countries[i].name; // Assuming countries have a 'name' property
-
-        h2.after(label);
-        label.appendChild(radio);
+        $('#country').append('<option value="' + countries[i].code + '">' + countries[i].name + '</option>');
     }
 
     let form = document.querySelector('#registration');
@@ -24,17 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     subBtn.addEventListener('click', function (e) {
         e.preventDefault();
         let user = form.elements.uname.value;
-        let checkRadio = document.getElementsByName('country');
-        let country;
+        let selectedCountry = form.elements.country.value;
 
-        for (let i = 0; i < checkRadio.length; i++) {
-            if (checkRadio[i].checked) {
-                country = checkRadio[i].value;
-                break;
-            }
-        }
-
-        let msg = `Welcome ${user}! The country code you selected is ${country}.`;
+        let msg = `Welcome ${user}! The country code you selected is ${selectedCountry}.`;
         parMsg.textContent = msg;
         form.appendChild(parMsg);
     });
@@ -62,20 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return false;
         }
 
-        let checkList = document.getElementsByName('country');
-        let ok = false;
-        let country;
+        let selectedCountry = form.elements.country.value;
 
-        for (let i = 0; i < checkList.length; i++) {
-            if (checkList[i].checked) {
-                ok = true;
-                country = checkList[i].value;
-                break;
-            }
-        }
-
-        if (!ok) {
-            alert('Please check one of the radio buttons');
+        if (!selectedCountry) {
+            alert('Please select a country from the dropdown list');
             return false;
         }
 
