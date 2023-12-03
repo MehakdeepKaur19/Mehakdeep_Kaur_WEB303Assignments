@@ -5,7 +5,7 @@ $(document).ready(function () {
     }
 
     let form = document.querySelector('#registration');
-    let subBtn = document.getElementsByName('Submit');
+    let subBtn = document.getElementByName('submit');
 
     let parMsg = document.createElement('p');
 
