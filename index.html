@@ -9,31 +9,33 @@
     <h1>
         Mehakdeep Kaur
     </h1>
-    <form id="registration" name="registration" action="/register" method="POST">
-        <label for="username">User Name:
-            <input type="text" name="username" id="username" />
-        </label>
-        <label for="password"> Enter password:
-            <input type="password" name="password" id="password" />
+    <form id="registration" action="/register" method="POST">
+        <label for="username">Username:
+            <input type="text" name="username" id="username">
         </label>
 
-        <label for="checkpsd">Re-Enter Password
-            <input type="password" name="checkpsd" id="checkpsd" />
+        <label for="password">Password:
+            <input type="password" name="password" id="password">
         </label>
 
-        <input type="checkbox" id="terms" name="terms" value="terms">
-        <label for="terms">I accept the terms of service</label><br>
+        <label for="confirmPassword">Confirm Password:
+            <input type="password" name="confirmPassword" id="confirmPassword">
+        </label>
+
+        <label for="terms">I accept the terms of service
+            <input type="checkbox" name="terms" id="terms">
+        </label>
 
         <label for="country">Select your country:</label>
         <select id="country" name="country" required>
-            <option value="">Select your country</option>
+            <option value="" disabled selected>Select your country</option>
         </select>
 
-        <br>
-
-        <input type="submit" name="Submit" id="submit" />
+        <button type="submit" id="submit" disabled>Submit</button>
     </form>
 
+    <div id="welcomeMessage"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/countries.js"></script>
