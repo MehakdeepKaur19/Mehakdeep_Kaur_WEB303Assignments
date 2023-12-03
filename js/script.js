@@ -16,7 +16,7 @@ document.ready('', function () {
 
         let msg = `Welcome ${user}! The country code you selected is ${selectedCountry}.`;
         parMsg.textContent = msg;
-        form.append(parMsg);
+        form.appendChild(parMsg);
     });
 
     let uname = form.elements.username;
