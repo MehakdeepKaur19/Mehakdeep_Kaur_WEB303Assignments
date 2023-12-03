@@ -5,18 +5,18 @@ $(document).ready(function () {
     }
 
     let form = document.querySelector('#registration');
-    let subBtn = document.getElementByName('submit');
+    let subBtn = document.getElementsByName('submit')[0]; // Use getElementsByName and select the first element
 
     let parMsg = document.createElement('p');
 
     subBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        let user = form.elements.uname.value;
+        let user = form.elements.username.value; // Corrected from uname to username
         let selectedCountry = form.elements.country.value;
 
         let msg = `Welcome ${user}! The country code you selected is ${selectedCountry}.`;
         parMsg.textContent = msg;
-        form.append(parMsg);
+        form.appendChild(parMsg); // Corrected from append to appendChild
     });
 
     let uname = form.elements.username;
