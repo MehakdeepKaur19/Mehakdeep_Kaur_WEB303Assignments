@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.ready('', function () {
     // Populate the country dropdown dynamically from countries.js
     for (let i = 0; i < countries.length; i++) {
         $('#country').append('<option value="' + countries[i].code + '">' + countries[i].name + '</option>');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let msg = `Welcome ${user}! The country code you selected is ${selectedCountry}.`;
         parMsg.textContent = msg;
-        form.appendChild(parMsg);
+        form.append(parMsg);
     });
 
     let uname = form.elements.username;
