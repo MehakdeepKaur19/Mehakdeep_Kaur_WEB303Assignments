@@ -17,7 +17,7 @@ $(document).ready(function () {
         let msg = `Welcome ${user}! The country code you selected is ${selectedCountry}.`;
         parMsg.textContent = msg;
         form.appendChild(parMsg); // Corrected from append to appendChild
-    });
+    };
 
     let uname = form.elements.username;
     let pass = form.elements.password;
