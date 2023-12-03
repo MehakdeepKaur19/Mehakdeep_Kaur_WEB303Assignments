@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     let parMsg = document.createElement('p');
 
-    subBtn.addEventListener('click', function(e){
+    subBtn.onclick = function (e) {
         e.preventDefault();
         let user = form.elements.username.value; // Corrected from uname to username
         let selectedCountry = form.elements.country.value;
