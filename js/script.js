@@ -52,17 +52,25 @@ $(document).ready(function () {
         return true;
     };
 
-    subBtn.disabled = true;
+    subBtn.classList.remove('enabled');
+subBtn.disabled = true;
+subBtn.classList.add('disabled');
 
-    let inputs = form.elements;
+let inputs = document.querySelectorAll('#registration input');
 
-    for (let i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener('change', function () {
-            if (!validation()) {
-                subBtn.disabled = true;
-            } else {
-                subBtn.disabled = false;
-            }
-        });
+for(let i = 0; i<inputs.length; i++) {
+    let checkValid = function(){
+        if(!validation()){
+            subBtn.disabled = true;
+            subBtn.classList.add('disabled');
+        }
+        else {
+            subBtn.disabled = false;
+            subBtn.classList.remove('disabled');
+            alert('This is a Demo, No Form is submited');
+        }
+
     }
+    inputs[i].addEventListener('change', checkValid);
+}
 });
