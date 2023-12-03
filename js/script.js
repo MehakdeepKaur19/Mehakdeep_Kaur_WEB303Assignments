@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.ready('', function () {
     // Populate the country dropdown dynamically from countries.js
     for (let i = 0; i < countries.length; i++) {
         $('#country').append('<option value="' + countries[i].code + '">' + countries[i].name + '</option>');
@@ -11,34 +11,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     subBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        let user = form.elements.username.value; // Corrected from uname to username
+        let user = form.elements.uname.value;
         let selectedCountry = form.elements.country.value;
 
         let msg = `Welcome ${user}! The country code you selected is ${selectedCountry}.`;
         parMsg.textContent = msg;
-        form.appendChild(parMsg);
+        form.append(parMsg);
     });
 
-    let username = form.elements.username;
-    let password = form.elements.password;
-    let confirmPassword = form.elements.checkpsd;
+    let uname = form.elements.username;
+    let pass = form.elements.password;
+    let repass = form.elements.checkpsd;
 
     const validation = function () {
-        if (username.value === '') {
+        if (uname.value === '') {
             alert("Please enter your username");
-            username.focus();
+            uname.focus();
             return false;
         }
 
-        if (password.value === '' || password.value.length < 12) {
-            alert("Please enter a valid password of at least 12 characters");
-            password.focus();
+        if (pass.value === '' || pass.value.length < 5) {
+            alert("Please enter a valid password larger than 5 characters");
+            pass.focus();
             return false;
         }
 
-        if (password.value !== confirmPassword.value) {
-            alert("Please make sure the passwords match");
-            confirmPassword.focus();
+        if (pass.value === '' || pass.value !== repass.value) {
+            alert("Please re-enter your password same as before");
+            repass.focus();
             return false;
         }
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let inputs = form.elements;
 
     for (let i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener('input', function () {
+        inputs[i].addEventListener('change', function () {
             if (!validation()) {
                 subBtn.disabled = true;
             } else {
