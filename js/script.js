@@ -24,7 +24,7 @@ $(document).ready(function () {
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
                 let username = document.getElementById('username').value;
-                let selectedCountry = countryDropdown.options[countryDropdown.selectedIndex].text;
+                let selectedCountry = countryDropdown.options[countryDropdown.selectedIndex].value;
 
                 welcomeMessage.innerHTML = `<p>Welcome ${username}! The country code you selected is ${selectedCountry}</p>`;
             });
