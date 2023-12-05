@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready( function () {
     // Creating the form and its elements 
   
     let form = document.createElement("form");
-    form.id = "registrationForm";
+    form.id = "registration";
   
     let usernameLabel = createLabel("Username:");
     let usernameInput = createInput("text", "username", true);
@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let passwordLabel = createLabel("Password (Must be at least 12 characters):");
     let passwordInput = createInput("password", "password", false);
   
-    let password2Label = createLabel("Re-enter your Password:");
-    let password2Input = createInput("password", "password2", false);
+    let confirmPasswordLabel = createLabel("Re-enter your Password:");
+    let confirmPasswordInput = createInput("password", "password2", false);
     let passwordMatchMessage = document.createElement("span");
     passwordMatchMessage.id = "passwordMatchMessage";
   
@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let countrySelect = document.createElement("select");
     countrySelect.id = "country";
     countrySelect.name = "country";
-    const defaultOption = document.createElement("option");
+    let defaultOption = document.createElement("option");
     defaultOption.value = "";
     defaultOption.text = "Select your country";
     countrySelect.appendChild(defaultOption);
     countries.forEach(function (country) {
-      const option = document.createElement("option");
+      let option = document.createElement("option");
       option.value = country.code;
       option.text = country.name;
       countrySelect.appendChild(option);
@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     form.appendChild(usernameInput);
     form.appendChild(passwordLabel);
     form.appendChild(passwordInput);
-    form.appendChild(password2Label);
-    form.appendChild(password2Input);
+    form.appendChild(confirmPasswordLabel);
+    form.appendChild(confirmPasswordInput);
     form.appendChild(passwordMatchMessage);
     form.appendChild(termsLabel);
     form.appendChild(termsInput);
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listeners for form controls
     usernameInput.addEventListener("input", validateForm);
     passwordInput.addEventListener("input", validateForm);
-    password2Input.addEventListener("input", validateForm);
+    confirmPasswordInput.addEventListener("input", validateForm);
     termsInput.addEventListener("change", validateForm);
     countrySelect.addEventListener("change", validateForm);
   
@@ -71,8 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Display welcome message with the country code
       var selectedCountryCode = countrySelect.value;
       welcomeMessage.innerText = `Welcome ${usernameInput.value}! The country code you selected is ${selectedCountryCode}.`;
-      welcomeMessage.style.display = "block";
-  
+      
     });
   
     // Function to create label
@@ -102,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function validateForm() {
       let isUsernameValid = usernameInput.value.trim() !== "";
       let isPasswordValid = passwordInput.value.length >= 12;
-      let isPasswordMatch = passwordInput.value === password2Input.value;
+      let isPasswordMatch = passwordInput.value === confirmPasswordInput.value;
       let isTermsChecked = termsInput.checked;
       let isCountrySelected = countrySelect.value !== "";
   
