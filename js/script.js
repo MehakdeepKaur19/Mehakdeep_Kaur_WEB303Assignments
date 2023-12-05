@@ -71,7 +71,7 @@ $(document).ready( function () {
       // Display welcome message with the country code
       var selectedCountryCode = countrySelect.value;
       welcomeMessage.innerText = `Welcome ${usernameInput.value}! The country code you selected is ${selectedCountryCode}.`;
-      
+      welcomeMessage.display.style = "block";
     });
   
     // Function to create label
