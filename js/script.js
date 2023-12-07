@@ -97,22 +97,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return input;
   }
+// Function to validate the form and enable/disable the submit button
+function validateForm() {
+  let isUsernameValid = usernameInput.value.trim() !== "";
+  let isPasswordValid = passwordInput.value.length >= 12;
+  let isPasswordMatch = passwordInput.value === password2Input.value;
+  let isTermsChecked = termsInput.checked;
+  let isCountrySelected = countrySelect.value !== "";
 
-  // Function to validate the form and enable/disable the submit button
-  function validateForm() {
-    let isUsernameValid = usernameInput.value.trim() !== "";
-    let isPasswordValid = passwordInput.value.length >= 12;
-    let isPasswordMatch = passwordInput.value === password2Input.value;
-    let isTermsChecked = termsInput.checked;
-    let isCountrySelected = countrySelect.value !== "";
-
-    submitButton.disabled = !(isUsernameValid && isPasswordValid && isPasswordMatch && isTermsChecked && isCountrySelected);
-
-    // Display password match message
-    if (!isPasswordMatch) {
-      passwordMatchMessage.innerText = "Passwords do not match!";
-    } else {
-      passwordMatchMessage.innerText = "";
-    }
+  // Display alert messages for each condition
+  if (!isUsernameValid) {
+    alert("Username is required!");
   }
-});
+
+  if (!isPasswordValid) {
+    alert("Password must be at least 12 characters!");
+  }
+
+  if (!isPasswordMatch) {
+    alert("Passwords do not match!");
+  }
+
+  if (!isTermsChecked) {
+    alert("You must accept the terms of service!");
+  }
+
+  if (!isCountrySelected) {
+    alert("Please select your country!");
+  }
+
+  // Enable/disable the submit button
+  submitButton.disabled = !(isUsernameValid && isPasswordValid && isPasswordMatch && isTermsChecked && isCountrySelected);
+
+  // Display password match message
+  if (!isPasswordMatch) {
+    passwordMatchMessage.innerText = "Passwords do not match!";
+  } else {
+    passwordMatchMessage.innerText = "";
+  }
+}
